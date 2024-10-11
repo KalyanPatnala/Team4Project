@@ -7,7 +7,7 @@ resource "aws_instance" "vm1" {
   vpc_security_group_ids = [aws_security_group.sg1.id]
   subnet_id              = aws_subnet.sn1.id
   tags = {
-    "Name" = "Natwest-Vm-nik-Ansible-${count.index}"
+    "Name" = "Natwest-Vm-team4-Ansible-${count.index}"
   }
   associate_public_ip_address = true
 }
