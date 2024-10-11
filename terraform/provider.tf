@@ -19,7 +19,7 @@ terraform {
     organization = "team4"
 
     workspaces {
-      name = "team4demo"
+      name = "team4"
     }
   }
 }
