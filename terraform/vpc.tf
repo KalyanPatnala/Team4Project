@@ -1,35 +1,35 @@
 resource "aws_vpc" "vpc1" {
   cidr_block = "91.89.89.0/24"
   tags = {
-    "Name" = "natwest-nik-vpc"
+    "Name" = "natwest-team4-vpc"
   }
 }
 resource "aws_subnet" "sn1" {
   vpc_id     = aws_vpc.vpc1.id
   cidr_block = "91.89.89.0/25"
   tags = {
-    "Name" = "natwest-vpc-nik-s1"
+    "Name" = "natwest-vpc-team4-s1"
   }
 }
 resource "aws_subnet" "sn2" {
   vpc_id     = aws_vpc.vpc1.id
   cidr_block = "91.89.89.128/25"
   tags = {
-    "Name" = "natwest-vpc-nik-s2"
+    "Name" = "natwest-vpc-team4-s2"
   }
 }
 
 resource "aws_route_table" "rtb1" {
   vpc_id = aws_vpc.vpc1.id
   tags = {
-    "Name" = "Natwest-Route-nik-Table"
+    "Name" = "Natwest-Route-team4-Table"
   }
 }
 
 resource "aws_internet_gateway" "gw1" {
   vpc_id = aws_vpc.vpc1.id
   tags = {
-    Name = "IG-nik-Natwest"
+    Name = "IG-team4-Natwest"
   }
 }
 
