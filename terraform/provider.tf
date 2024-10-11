@@ -16,10 +16,10 @@ provider "aws" {
 terraform {
   cloud {
 
-    organization = "nikita-work"
+    organization = "team4"
 
     workspaces {
-      name = "testwork1"
+      name = "team4demo"
     }
   }
 }
