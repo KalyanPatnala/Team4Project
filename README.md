@@ -20,8 +20,12 @@ terraform login
 1. Log into vm ssh -i "~/.ssh/id_rsa" ec2-user@13.127.8.187
 2. sudo -i
 3. hostnamectl hostname master
-4. install ansible dnf install ansible-core
+4. install ansible
+
+dnf install ansible-core
+   
 ansible –version 
+
 ansible –help
 
 we will have to update pub key of master machine into clients to generate the oub key , follow below procedure  
