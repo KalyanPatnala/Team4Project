@@ -28,15 +28,15 @@ appropriate Branching and Security Policies   -------> clarify with RAMESH
 - Docker File and the use docker-compose to automate image creation
 process - store images in Docker hub  ---> Nikita will try to complete  and hadnover to jamie 
  
-Use of helm charts for k8s package management    
+- Use of helm charts for k8s package management    
 
 - Deploy ingress Controller in K8s to access the applications ---> 
 
 Launch Microservices using S2I concept of OpenShift   
 
-Use Persistent storage  --> openshift   ---> to store the data --> yaml files for our project 
+Use Persistent storage  --> openshift ---> to store the data --> yaml files for our project 
 
-Use Network policies to isolate applications  --> same yamls files peneshift and k8s both 
+Use Network policies to isolate applications --> same yamls files peneshift and k8s both 
 
 Monitor applications using ELK/EFK stack on OpenShift   
 
