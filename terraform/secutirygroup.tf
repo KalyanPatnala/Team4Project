@@ -1,5 +1,5 @@
 resource "aws_security_group" "sg1" {
-  name   = "natwest-nik-sg1"
+  name   = "natwest-team4-sg1"
   vpc_id = aws_vpc.vpc1.id
 
   ingress {
