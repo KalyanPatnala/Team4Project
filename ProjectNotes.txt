@@ -1,10 +1,11 @@
-Project check points
+Progress check points
 
-Uploaded the terraform code  to provision ec2 instance
-uplaoded sample ansible-docercoompose file ( we will have to modidy the file)
+--> Uploaded the terraform code  to provision ec2 instance  : Kalyan will review it and change the names
+--> uplaoded sample ansible-docercoompose file 
 
 
 work pending
+
 as per my understanding , we can work on  point hilighted in bold below
 
 Batch-4 Project Details
@@ -14,23 +15,44 @@ tenants on k8s and OpenShift with sample application comprising of two
 microservices (SpringBoot with MongoDB), use ArgoCD (on K8s) and S2I pipeline
 (on OpenShift) for deploying Sample project, Use ELK stack for monitoring
 application with below flow.
--Use Terraform scripts to provision infrastructure such as Kubernetes
-cluster, EC2 instances*
-- Use Ansible to configure provisioned Infrastructure*
+
+
+---> Use Terraform scripts to provision infrastructure such as Kubernetes
+cluster, EC2 instances
+
+- Use Ansible to configure provisioned Infrastructure*  : K8s Pending  -- Veera
 
 Use GitHub/Gitlab repos to store source code and pipeline files and Apply
-appropriate Branching and Security Policies
+appropriate Branching and Security Policies   -------> clarify with RAMESH 
 
 - Docker File and the use docker-compose to automate image creation
-process - store images in Docker hub*
+process - store images in Docker hub  ---> Nikita will try to complete  and hadnover to jamie 
+ 
+Use of helm charts for k8s package management    
 
-Use of helm charts for k8s package management
+- Deploy ingress Controller in K8s to access the applications ---> 
 
-- Deploy ingress Controller in K8s to access the applications*
+Launch Microservices using S2I concept of OpenShift   
 
-Launch Microservices using S2I concept of OpenShift
+Use Persistent storage  --> openshift   ---> to store the data --> yaml files for our project 
 
-- Use Persistent storage*
-- Use Network policies to isolate applications**
+Use Network policies to isolate applications  --> same yamls files peneshift and k8s both 
 
-Monitor applications using ELK/EFK stack on OpenShift
+Monitor applications using ELK/EFK stack on OpenShift   
+
+Notes :- 
+
+CI using jenkins  --> provision the infra , build the images , store  the images in docker hub 
+
+Argo CD -->  yaml files git hub and deploy in kubernetes 
+
+S2I --> 
+
+
+
+
+
+
+
+
+
