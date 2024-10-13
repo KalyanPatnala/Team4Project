@@ -73,7 +73,7 @@ ansible-playbook play1.yaml
 
 *************************************************************************
 
-Manual DOcker engine installation on ubutnu 
+to install  DOcker engine installation on ubutnu follow the link 
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin**
 
