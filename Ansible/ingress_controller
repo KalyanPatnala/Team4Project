@@ -1,0 +1,77 @@
+#Step 1.1:Add the NGINX Ingress Helm repository:
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+
+
+#Step 1.2: Install the Ingress Controller:
+helm install nginx-ingress ingress-nginx/ingress-nginx --set controller.publishService.enabled=true
+
+
+#Step 2.1: Create an Ingress Resource
+
+vi ingress-resource.yaml
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service:
+            name: app1
+            port:
+              number: 80
+      - path: /app2
+        pathType: Prefix
+        backend:
+          service:
+            name: app2
+            port:
+              number: 80
+
+# Step 2.2: Apply this configuration
+
+kubectl apply -f ingress-resource.yaml
+
+# Step 3: Access your application
+# Ensure your DNS is set up to route traffic to the IP address of your Kubernetes cluster or the external IP of the Ingress Controller service. 
+# You can check the IP of the NGINX Ingress Controller service using:
+
+kubectl get svc -n ingress-nginx
+
+# Once DNS is set up, you should be able to access your applications at the configured paths (e.g., http://example.com/app1 and http://example.com/app2).
+
+# Optional: Enable SSL (HTTPS)
+# You can secure your applications using SSL certificates with the help of tools like cert-manager. Here's an example of adding TLS support to the Ingress resource:
+
+vi tls.yaml
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  tls:
+  - hosts:
+    - example.com
+    secretName: example-tls
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service:
+            name: app1
+            port:
+              number: 80
