@@ -1,5 +1,5 @@
 <?php
-$servername = "172.17.0.2";
+$servername = "database";
 $username = "root";
 $password = "123";
 $dbname = "mydb";
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT firstname, rollnumber FROM tb";
+$sql = "SELECT firstname, rollnumber FROM natwest";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
