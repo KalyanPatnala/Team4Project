@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: ./web.df
+    container_name: frontend
+    ports:
+      - "9098:80"
+    volumes:
+      - "/php:/var/www/html"
+    depends_on:
+      - database
+  database:
+    build:
+      context: .
+      dockerfile: ./mysql.df
+    container_name: backend
+    ports:
+      - "3306:3306"  # Corrected to a list format
+    volumes: 
+      - "dbvol:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "123"
+
+volumes:
+  dbvol:
