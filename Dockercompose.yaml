@@ -3,19 +3,19 @@ services:
   webserver:
     build:
       context: .
-      dockerfile: ./web.df
+      dockerfile: ./php/web.df
     container_name: frontend
     ports:
       - "9098:80"
     volumes:
-      - "/php:/var/www/html"
+      - "./php:/var/www/html"
     depends_on:
       - database
   database:
     build:
       context: .
-      dockerfile: ./mysql.df
-    container_name: backend
+      dockerfile: ./mysql/mysql.df
+    container_name: db
     ports:
       - "3306:3306"  # Corrected to a list format
     volumes: 
